@@ -7,7 +7,7 @@
  * Author: Joris Le Blansch
  * Author URI: https://apio.systems
  * License: MIT
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * License URI: https://github.com/apio-sys/cf7-simple-honeypot/blob/main/LICENSE
  * Text Domain: cf7-simple-honeypot
  * Requires at least: 5.0
  * Requires PHP: 7.2

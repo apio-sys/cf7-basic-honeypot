@@ -5,8 +5,8 @@ Requires at least: 5.0
 Tested up to: 6.8
 Stable tag: 0.9.1
 Requires PHP: 7.2
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: MIT
+License URI: https://github.com/apio-sys/cf7-simple-honeypot/blob/main/LICENSE
 
 Simple Honeypot plugin for Contact Form 7 to reduce spam on form submissions without user interaction. Includes honeypot field, time-based validation, and content analysis. Store results in Flamingo.
 
