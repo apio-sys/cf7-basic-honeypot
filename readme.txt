@@ -8,7 +8,7 @@ Requires PHP: 7.2
 License: MIT
 License URI: https://github.com/apio-sys/cf7-simple-honeypot/blob/main/LICENSE
 
-Simple Honeypot plugin for Contact Form 7 to reduce spam on form submissions without user interaction. Includes honeypot field, time-based validation, and content analysis. Store results in Flamingo.
+Simple Honeypot plugin for Contact Form 7 to reduce spam on form submissions without user interaction.
 
 == Description ==
 
