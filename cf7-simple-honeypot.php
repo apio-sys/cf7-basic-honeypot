@@ -354,7 +354,7 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
         $submission->add_spam_log(array(
             'agent' => 'content-analysis',
             /* translators: 1: number of URLs found, 2: maximum number allowed */
-            'reason' => sprintf(__('Too many URLs in message (%d found, max %d allowed)', 'cf7-simple-honeypot'), $url_count, $max_urls)
+            'reason' => sprintf(__('Too many URLs in message (%1$d found, max %2$d allowed)', 'cf7-simple-honeypot'), $url_count, $max_urls)
         ));
         return $spam;
     }
@@ -369,7 +369,7 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
             $submission->add_spam_log(array(
                 'agent' => 'content-analysis',
                 /* translators: 1: percentage of uppercase characters, 2: maximum percentage allowed */
-                'reason' => sprintf(__('Excessive uppercase text (%.0f%% caps, max %d%% allowed)', 'cf7-simple-honeypot'), $caps_percentage, $max_caps)
+                'reason' => sprintf(__('Excessive uppercase text (%1$.0f%% caps, max %2$d%% allowed)', 'cf7-simple-honeypot'), $caps_percentage, $max_caps)
             ));
             return $spam;
         }
@@ -382,7 +382,7 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
         $submission->add_spam_log(array(
             'agent' => 'content-analysis',
             /* translators: 1: number of words in message, 2: minimum number required */
-            'reason' => sprintf(__('Message too short (%d words, min %d required)', 'cf7-simple-honeypot'), $word_count, $min_words)
+            'reason' => sprintf(__('Message too short (%1$d words, min %2$d required)', 'cf7-simple-honeypot'), $word_count, $min_words)
         ));
         return $spam;
     }
