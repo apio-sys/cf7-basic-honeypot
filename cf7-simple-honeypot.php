@@ -314,9 +314,9 @@ function cf7_simple_honeypot_timestamp_validation($spam, $submission) {
     // Form took too long
     if ($time_elapsed > $max_time) {
         $spam = true;
-        /* translators: %d: number of seconds the form was open */
         $submission->add_spam_log(array(
             'agent' => 'timestamp',
+            /* translators: %d: number of seconds the form was open */
             'reason' => sprintf(__('Form session expired (%d seconds old)', 'cf7-simple-honeypot'), $time_elapsed)
         ));
         return $spam;
@@ -351,9 +351,9 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
     $url_count = preg_match_all('/https?:\/\/[^\s]+/i', $message);
     if ($url_count > $max_urls) {
         $spam = true;
-        /* translators: 1: number of URLs found, 2: maximum number allowed */
         $submission->add_spam_log(array(
             'agent' => 'content-analysis',
+            /* translators: 1: number of URLs found, 2: maximum number allowed */
             'reason' => sprintf(__('Too many URLs in message (%d found, max %d allowed)', 'cf7-simple-honeypot'), $url_count, $max_urls)
         ));
         return $spam;
@@ -366,9 +366,9 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
         $caps_percentage = ($uppercase_count / strlen($letters_only)) * 100;
         if ($caps_percentage > $max_caps) {
             $spam = true;
-            /* translators: 1: percentage of uppercase characters, 2: maximum percentage allowed */
             $submission->add_spam_log(array(
                 'agent' => 'content-analysis',
+                /* translators: 1: percentage of uppercase characters, 2: maximum percentage allowed */
                 'reason' => sprintf(__('Excessive uppercase text (%.0f%% caps, max %d%% allowed)', 'cf7-simple-honeypot'), $caps_percentage, $max_caps)
             ));
             return $spam;
@@ -379,9 +379,9 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
     $word_count = str_word_count($message);
     if ($word_count < $min_words) {
         $spam = true;
-        /* translators: 1: number of words in message, 2: minimum number required */
         $submission->add_spam_log(array(
             'agent' => 'content-analysis',
+            /* translators: 1: number of words in message, 2: minimum number required */
             'reason' => sprintf(__('Message too short (%d words, min %d required)', 'cf7-simple-honeypot'), $word_count, $min_words)
         ));
         return $spam;
@@ -393,9 +393,9 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
     foreach ($spam_keywords as $keyword) {
         if (strpos($message_lower, strtolower($keyword)) !== false) {
             $spam = true;
-            /* translators: %s: the spam keyword that was detected */
             $submission->add_spam_log(array(
                 'agent' => 'content-analysis',
+                /* translators: %s: the spam keyword that was detected */
                 'reason' => sprintf(__('Spam keyword detected: "%s"', 'cf7-simple-honeypot'), $keyword)
             ));
             return $spam;
@@ -417,9 +417,9 @@ function cf7_simple_honeypot_content_analysis($spam, $submission) {
         $special_char_percentage = ($special_char_count / $total_chars) * 100;
         if ($special_char_percentage > 30) {
             $spam = true;
-            /* translators: %s: percentage of special characters in the message */
             $submission->add_spam_log(array(
                 'agent' => 'content-analysis',
+                /* translators: %s: percentage of special characters in the message */
                 'reason' => sprintf(__('Excessive special characters (%.0f%% of message)', 'cf7-simple-honeypot'), $special_char_percentage)
             ));
             return $spam;
