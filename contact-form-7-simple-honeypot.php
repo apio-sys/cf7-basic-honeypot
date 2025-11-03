@@ -4,9 +4,9 @@
  * Plugin URI: https://github.com/apio-sys/contact-form-7-simple-honeypot
  * Description: Simple Honeypot plugin for CF7 to reduce spam on form submissions without user interaction. Includes honeypot field, time-based validation, and content analysis.
  * Version: 0.9.0
- * Author: Joris Le Blansch, Apio systems
+ * Author: Joris Le Blansch
  * Author URI: https://apio.systems
- * License: GPL v2 or later
+ * License: MIT
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: cf7-simple-honeypot
  * Requires at least: 5.0
