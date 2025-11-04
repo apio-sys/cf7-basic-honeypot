@@ -77,8 +77,8 @@ function cf7_simple_honeypot_add_admin_menu() {
 }
 
 // Link to settings from plugin list
-add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'apd_settings_link' );
-function apd_settings_link( array $links ) {
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'cf7_simple_honeypot_settings_link' );
+function cf7_simple_honeypot_settings_link( array $links ) {
     $url = get_admin_url() . "admin.php?page=cf7-simple-honeypot";
     $settings_link = '<a href="' . $url . '">' . __('Settings', 'cf7-simple-honeypot') . '</a>';
       $links[] = $settings_link;
