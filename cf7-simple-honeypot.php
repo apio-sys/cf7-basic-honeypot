@@ -9,7 +9,7 @@
  * License: MIT
  * License URI: https://github.com/apio-sys/cf7-simple-honeypot/blob/main/LICENSE
  * Text Domain: cf7-simple-honeypot
- * Requires at least: 5.0
+ * Requires at least: 6.5
  * Requires PHP: 7.2
  * Requires Plugins: contact-form-7, flamingo
  */
@@ -40,27 +40,6 @@ function cf7_simple_honeypot_default_settings() {
         'spam_keywords' => "viagra\ncialis\npharmacy\nprescription\ncasino\npoker\nbetting\ngambling\nloan\nmortgage\ncrypto\nbitcoin\nforex\ninvestment opportunity\npassive income\ncash flow\nearning money\nearn money\nmake money\nmaking money\nthousands of dollars\nhundreds of dollars\nmoney flow\nclick here\nbuy now\nlimited offer\nact now\norder now\nvisit now\ncheck this out\nweight loss\nwork from home\nseo service\nseo services\nlink building\nincrease traffic\nbacklinks\nboost your ranking\nget more followers\ngrow your business\ninstagram followers\nfacebook likes\nyoutube views\nincrease followers\ngain followers\nreal deal\nskeptical at first\nevaluation copy\nthis system\namazing opportunity\nlimited time\ndon't miss out\nact fast\nspecial offer\ncongratulations\nyou've been selected\nclaim your\nrisk free\nmoney back guarantee\nno obligation",
         'message_field_names' => "your-message\nmessage\nyour-comment\ncomment"
     );
-}
-
-// Check if Contact Form 7 is active
-function cf7_simple_honeypot_check_cf7() {
-    if (!function_exists('wpcf7')) {
-        add_action('admin_notices', 'cf7_simple_honeypot_cf7_missing_notice');
-        deactivate_plugins(plugin_basename(__FILE__));
-        if (isset($_GET['activate'])) {
-            unset($_GET['activate']);
-        }
-    }
-}
-add_action('admin_init', 'cf7_simple_honeypot_check_cf7');
-
-// Admin notice if Contact Form 7 is not installed
-function cf7_simple_honeypot_cf7_missing_notice() {
-    ?>
-    <div class="notice notice-error">
-        <p><?php esc_html_e('Contact Form 7 Simple Honeypot requires Contact Form 7 to be installed and activated.', 'cf7-simple-honeypot'); ?></p>
-    </div>
-    <?php
 }
 
 // Add admin menu under Contact
