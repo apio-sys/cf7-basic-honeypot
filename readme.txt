@@ -1,7 +1,7 @@
 === Simple Honeypot for Contact Form 7 ===
 Contributors: apiosys
 Tags: honeypot, antispam, forms
-Requires at least: 5.0
+Requires at least: 6.5
 Tested up to: 6.8
 Stable tag: 0.9.1
 Requires PHP: 7.2
